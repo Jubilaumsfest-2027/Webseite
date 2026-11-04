@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jubiläumsfest 2027</title>
+  <meta name="description" content="Feiert mit uns: Unser großes Jubiläumsfest 2027 – Programm, Anfahrt und Anmeldung.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       ANPASSEN: Alle Stellen mit [eckigen Klammern] durch eure
+       eigenen Angaben ersetzen. Das Datum für den Countdown steht
+       in script.js (Konstante FEST_DATUM).
+       ============================================================ -->
+
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a href="#top" class="nav__logo">[Name] <span>2027</span></a>
+      <button class="nav__toggle" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav__links">
+        <a href="#geschichte">Geschichte</a>
+        <a href="#programm">Programm</a>
+        <a href="#ort">Anfahrt</a>
+        <a href="#faq">FAQ</a>
+        <a href="#anmeldung" class="btn btn--small">Anmelden</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero__confetti" aria-hidden="true"></div>
+    <div class="container hero__content">
+      <p class="hero__eyebrow">Wir feiern</p>
+      <h1 class="hero__title"><span class="hero__number">[50]</span> Jahre<br>[Name des Vereins / der Firma]</h1>
+      <p class="hero__meta">
+        <strong>[Samstag, 12. Juni 2027]</strong> · ab [14:00 Uhr] · [Ort]
+      </p>
+      <div class="countdown" aria-live="polite">
+        <div><span id="cd-tage">–</span><small>Tage</small></div>
+        <div><span id="cd-stunden">–</span><small>Stunden</small></div>
+        <div><span id="cd-minuten">–</span><small>Minuten</small></div>
+        <div><span id="cd-sekunden">–</span><small>Sekunden</small></div>
+      </div>
+      <div class="hero__actions">
+        <a href="#anmeldung" class="btn">Jetzt anmelden</a>
+        <a href="#programm" class="btn btn--ghost">Zum Programm</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+
+    <section id="geschichte" class="section">
+      <div class="container">
+        <h2 class="section__title">Unsere Geschichte</h2>
+        <p class="section__lead">
+          [Ein, zwei Sätze zur Einleitung: Wie alles begann und warum wir dieses Jubiläum gemeinsam feiern wollen.]
+        </p>
+        <ol class="timeline">
+          <li><span class="timeline__year">[1977]</span><div><h3>Die Gründung</h3><p>[Wer hat wann und wo angefangen?]</p></div></li>
+          <li><span class="timeline__year">[1990]</span><div><h3>[Meilenstein]</h3><p>[Kurze Beschreibung]</p></div></li>
+          <li><span class="timeline__year">[2005]</span><div><h3>[Meilenstein]</h3><p>[Kurze Beschreibung]</p></div></li>
+          <li><span class="timeline__year">2027</span><div><h3>[50] Jahre!</h3><p>Und das feiern wir – mit euch.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="programm" class="section section--alt">
+      <div class="container">
+        <h2 class="section__title">Programm</h2>
+        <p class="section__lead">[Samstag, 12. Juni 2027]</p>
+        <ul class="program">
+          <li><time>[14:00]</time><div><h3>Empfang &amp; Sektempfang</h3><p>[Begrüßung der Gäste]</p></div></li>
+          <li><time>[15:00]</time><div><h3>Festreden</h3><p>[Wer spricht?]</p></div></li>
+          <li><time>[16:00]</time><div><h3>Kaffee, Kuchen &amp; Kinderprogramm</h3><p>[Hüpfburg, Kinderschminken …]</p></div></li>
+          <li><time>[18:30]</time><div><h3>Abendessen</h3><p>[Buffet / Grill]</p></div></li>
+          <li><time>[20:00]</time><div><h3>Live-Musik &amp; Tanz</h3><p>[Band / DJ]</p></div></li>
+          <li><time>[22:30]</time><div><h3>Überraschung</h3><p>Lasst euch überraschen!</p></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="ort" class="section">
+      <div class="container grid-2">
+        <div>
+          <h2 class="section__title">Anfahrt</h2>
+          <address class="address">
+            <strong>[Name der Location]</strong><br>
+            [Straße Hausnummer]<br>
+            [PLZ Ort]
+          </address>
+          <ul class="info-list">
+            <li><strong>Parken:</strong> [Parkplätze direkt an der Location]</li>
+            <li><strong>ÖPNV:</strong> [Bus Linie X, Haltestelle Y – 5 Min. Fußweg]</li>
+            <li><strong>Barrierefreiheit:</strong> [ebenerdiger Zugang]</li>
+          </ul>
+          <a class="btn btn--ghost-dark" target="_blank" rel="noopener"
+             href="https://www.openstreetmap.org/search?query=[Adresse]">Auf der Karte öffnen</a>
+        </div>
+        <div class="map-placeholder" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="56" height="56"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
+          <p>[Ort]</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="anmeldung" class="section section--alt">
+      <div class="container container--narrow">
+        <h2 class="section__title">Anmeldung</h2>
+        <p class="section__lead">Damit wir gut planen können, meldet euch bitte bis zum <strong>[1. Mai 2027]</strong> an.</p>
+
+        <!-- data-netlify sorgt dafür, dass Netlify die Anmeldungen automatisch sammelt. -->
+        <form class="form" name="anmeldung" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="anmeldung">
+          <p class="hidden"><label>Nicht ausfüllen: <input name="bot-field"></label></p>
+
+          <div class="form__row">
+            <label>Name*<input type="text" name="name" required autocomplete="name"></label>
+            <label>E-Mail*<input type="email" name="email" required autocomplete="email"></label>
+          </div>
+
+          <fieldset class="form__choice">
+            <legend>Kommst du?*</legend>
+            <label><input type="radio" name="teilnahme" value="ja" required checked> Ja, ich bin dabei!</label>
+            <label><input type="radio" name="teilnahme" value="nein"> Leider nicht</label>
+          </fieldset>
+
+          <div class="form__row" data-only-yes>
+            <label>Erwachsene<input type="number" name="erwachsene" min="0" max="20" value="1"></label>
+            <label>Kinder<input type="number" name="kinder" min="0" max="20" value="0"></label>
+          </div>
+
+          <label data-only-yes>Essenswünsche / Allergien
+            <input type="text" name="essen" placeholder="z. B. vegetarisch, glutenfrei">
+          </label>
+
+          <label>Nachricht an uns
+            <textarea name="nachricht" rows="4" placeholder="Grüße, Erinnerungen, Fragen …"></textarea>
+          </label>
+
+          <button type="submit" class="btn">Anmeldung absenden</button>
+          <p class="form__status" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container container--narrow">
+        <h2 class="section__title">Häufige Fragen</h2>
+        <details>
+          <summary>Gibt es einen Dresscode?</summary>
+          <p>[Nein – kommt so, wie ihr euch wohlfühlt. / Festlich-sommerlich.]</p>
+        </details>
+        <details>
+          <summary>Dürfen Kinder mitkommen?</summary>
+          <p>[Unbedingt! Es gibt ein eigenes Kinderprogramm.]</p>
+        </details>
+        <details>
+          <summary>Was kostet die Teilnahme?</summary>
+          <p>[Der Eintritt ist frei, Essen und Getränke …]</p>
+        </details>
+        <details>
+          <summary>Kann ich etwas beitragen?</summary>
+          <p>[Kuchenspenden, alte Fotos für die Ausstellung … meldet euch gern bei uns.]</p>
+        </details>
+        <details>
+          <summary>Wen kann ich bei Fragen kontaktieren?</summary>
+          <p>[Name], <a href="mailto:[email@beispiel.de]">[email@beispiel.de]</a>, [Telefon]</p>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>Wir freuen uns auf euch! 🎉</p>
+      <p class="footer__small">
+        © 2027 [Name] · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
