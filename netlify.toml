@@ -1,0 +1,13 @@
+# Netlify: statische Seite ohne Build-Schritt, veröffentlicht wird der Projektordner.
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/schriften/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/bilder/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
