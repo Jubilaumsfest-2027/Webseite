@@ -13,6 +13,7 @@ Schriften (Bebas Neue, Poppins, Permanent Marker, SIL Open Font License) liegen 
 | `style.css` | Gestaltung – Farben aus dem Logo stehen oben unter `:root` |
 | `script.js` | Countdown (`FEST_DATUM`), Menü, Animationen, Formular |
 | `bilder/` | Logo (hell/dunkel), Wappen, Bandfoto, Vorschaubild zum Teilen |
+| `404.html` | Eigene Fehlerseite für nicht vorhandene Adressen (Netlify nutzt sie automatisch) |
 | `impressum.html`, `datenschutz.html` | Rechtliches – Platzhalter in `[eckigen Klammern]` noch ausfüllen |
 
 ## Programm ergänzen
