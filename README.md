@@ -23,5 +23,9 @@ In `index.html` beim jeweiligen Tag den Eintrag `Programm wird in Kürze bekannt
 
 ## Ansehen & Veröffentlichen
 Lokal: `index.html` im Browser öffnen.
-Online: z. B. über Netlify (Repository verbinden). Das Formular „Ticket-Info“ wird dort automatisch
-erkannt, Einträge erscheinen im Netlify-Dashboard unter „Forms“.
+
+Online: **https://jubilaeum2027.de** – Netlify-Projekt `jubilaeum2027`, verbunden mit dem Branch `main`.
+Automatisches Veröffentlichen ist **gesperrt**: Ein Push auf `main` erzeugt nur einen neuen Deploy,
+live geht er erst nach Klick auf **Publish deploy** im Netlify-Dashboard (Deploys).
+
+Einträge des Formulars „Ticket-Info“ stehen im Netlify-Dashboard unter **Forms**.
