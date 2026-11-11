@@ -13,7 +13,7 @@
    aus „FEST“ / SF-Wappen. Das Weinrot steckt nur noch im Logo.
    ============================================================ */
 :root {
-  --rot: #e31e24;          /* Signalrot aus dem hellen Logo */
+  --rot: #ed1c24;          /* offizielles Rot der SF Bietzen-Harlingen */
   --rot-dunkel: #c0161c;   /* Hover */
   --rot-zart: #fdecec;     /* sehr helles Rot für Flächen */
   --ink: #1d1d1f;          /* Anthrazit für Text & Überschriften */
@@ -64,7 +64,7 @@ h3 { font-size: 1.1rem; font-weight: 600; }
   cursor: pointer;
   transition: transform .15s, background .15s, box-shadow .15s, color .15s;
 }
-.btn:hover { background: var(--rot-dunkel); border-color: var(--rot-dunkel); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(227,30,36,.25); }
+.btn:hover { background: var(--rot-dunkel); border-color: var(--rot-dunkel); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(237,28,36,.25); }
 .btn:disabled { opacity: .6; cursor: wait; transform: none; }
 .btn--small { padding: .45em 1.1em .35em; font-size: 1.1rem; }
 .btn--ghost, .btn--outline { background: transparent; color: var(--ink); border-color: var(--ink); }
@@ -246,7 +246,7 @@ h3 { font-size: 1.1rem; font-weight: 600; }
   border: 1.5px solid var(--line); border-radius: 10px; background: var(--bg-alt);
   transition: border-color .15s, box-shadow .15s;
 }
-.form input:focus { outline: none; border-color: var(--rot); box-shadow: 0 0 0 3px rgba(227,30,36,.15); }
+.form input:focus { outline: none; border-color: var(--rot); box-shadow: 0 0 0 3px rgba(237,28,36,.15); }
 .form .form__check { display: flex; gap: .7rem; align-items: flex-start; font-weight: 400; font-size: .85rem; color: var(--muted); line-height: 1.5; }
 .form__check input { accent-color: var(--rot); width: 18px; height: 18px; margin-top: .15rem; flex-shrink: 0; }
 .form .btn { justify-self: start; }
@@ -277,3 +277,4 @@ details p { margin: .7rem 0 0; color: var(--muted); }
 /* ---------- Rechtliche Seiten ---------- */
 .legal main { padding: 120px 0 4rem; }
 .legal h2 { font-size: 1.8rem; color: var(--ink); margin-top: 2rem; }
+.legal h1 { font-family: var(--font-head); font-weight: 400; letter-spacing: .02em; }

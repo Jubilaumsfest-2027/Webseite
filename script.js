@@ -65,7 +65,7 @@ const FEST_DATUM = new Date("2027-07-23T00:00:00");
 (function confetti() {
   const box = document.querySelector(".hero__confetti");
   if (!box || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  const colors = ["#e31e24", "#e31e24", "#1d1d1f", "#c7c7c7", "#7a0a0a"];
+  const colors = ["#ed1c24", "#ed1c24", "#1d1d1f", "#c7c7c7", "#7a0a0a"];
   for (let i = 0; i < 40; i++) {
     const c = document.createElement("span");
     c.className = "confetti";
