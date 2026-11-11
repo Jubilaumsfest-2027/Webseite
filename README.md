@@ -1,17 +1,27 @@
-# Jubiläumsfest 2027 – Webseite
+# Jubiläumsfest Bietzen 2027
 
-Statische Webseite (HTML/CSS/JS, keine Abhängigkeiten) für unser Jubiläumsfest.
+Webseite zum Jubiläumsfest **120 Jahre Musik · 100 Jahre Sport**
+(M.V. Cäcilia Bietzen 1907 & SF 1927 Bi-Ha), 23.–26. Juli 2027, Sportplatz Bietzen.
 
-## Anpassen
-- **Texte:** In `index.html` alle Stellen in `[eckigen Klammern]` ersetzen.
-- **Datum für den Countdown:** in `script.js` die Konstante `FEST_DATUM`.
-- **Farben:** oben in `style.css` unter `:root`.
-- **Impressum / Datenschutz:** `impressum.html` und `datenschutz.html` ausfüllen.
+Statische Seite (HTML/CSS/JS), ohne Build-Schritt und ohne externe Dienste:
+Schriften (Bebas Neue, Poppins, Permanent Marker, SIL Open Font License) liegen lokal in `schriften/`.
 
-## Ansehen
-`index.html` einfach im Browser öffnen.
+## Struktur
+| Datei / Ordner | Inhalt |
+| --- | --- |
+| `index.html` | Startseite: Highlight, Programm, Vereine, Anfahrt, Tickets, FAQ |
+| `style.css` | Gestaltung – Farben aus dem Logo stehen oben unter `:root` |
+| `script.js` | Countdown (`FEST_DATUM`), Menü, Animationen, Formular |
+| `bilder/` | Logo (hell/dunkel), Wappen, Bandfoto, Vorschaubild zum Teilen |
+| `impressum.html`, `datenschutz.html` | Rechtliches – Platzhalter in `[eckigen Klammern]` noch ausfüllen |
 
-## Veröffentlichen
-Am einfachsten über [Netlify](https://www.netlify.com/): Repository verbinden – fertig.
-Das Anmeldeformular wird dort automatisch erkannt (Netlify Forms), die Anmeldungen
-erscheinen im Netlify-Dashboard unter „Forms“.
+## Programm ergänzen
+In `index.html` beim jeweiligen Tag den Eintrag `Programm wird in Kürze bekanntgegeben` ersetzen durch z. B.:
+```html
+<li><time>18:00</time><span><strong>Fassanstich</strong><br>mit Musik</span></li>
+```
+
+## Ansehen & Veröffentlichen
+Lokal: `index.html` im Browser öffnen.
+Online: z. B. über Netlify (Repository verbinden). Das Formular „Ticket-Info“ wird dort automatisch
+erkannt, Einträge erscheinen im Netlify-Dashboard unter „Forms“.

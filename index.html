@@ -3,33 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jubiläumsfest 2027</title>
-  <meta name="description" content="Feiert mit uns: Unser großes Jubiläumsfest 2027 – Programm, Anfahrt und Anmeldung.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>Jubiläumsfest Bietzen 2027 · 23.–26. Juli</title>
+  <meta name="description" content="120 Jahre Musik · 100 Jahre Sport: Vier Tage Musik, Sport &amp; Feiern vom 23. bis 26. Juli 2027 auf dem Sportplatz Bietzen. Highlight am Samstag: Alpenblech.">
+  <meta name="theme-color" content="#660b13">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Jubiläumsfest Bietzen 2027">
+  <meta property="og:description" content="120 Jahre Musik · 100 Jahre Sport – 23. bis 26. Juli 2027, Sportplatz Bietzen.">
+  <meta property="og:image" content="bilder/vorschau.jpg">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="bilder/apple-touch-icon.png">
+  <link rel="preload" href="schriften/bebas-neue-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ============================================================
-       ANPASSEN: Alle Stellen mit [eckigen Klammern] durch eure
-       eigenen Angaben ersetzen. Das Datum für den Countdown steht
-       in script.js (Konstante FEST_DATUM).
-       ============================================================ -->
-
   <header class="nav" id="top">
     <div class="container nav__inner">
-      <a href="#top" class="nav__logo">[Name] <span>2027</span></a>
+      <a href="#top" class="nav__logo">Jubiläumsfest <span>Bietzen 2027</span></a>
       <button class="nav__toggle" aria-label="Menü öffnen" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <nav class="nav__links">
-        <a href="#geschichte">Geschichte</a>
+        <a href="#highlight">Highlight</a>
         <a href="#programm">Programm</a>
-        <a href="#ort">Anfahrt</a>
+        <a href="#vereine">Vereine</a>
+        <a href="#anfahrt">Anfahrt</a>
         <a href="#faq">FAQ</a>
-        <a href="#anmeldung" class="btn btn--small">Anmelden</a>
+        <a href="#tickets" class="btn btn--small">Tickets</a>
       </nav>
     </div>
   </header>
@@ -37,142 +37,203 @@
   <section class="hero">
     <div class="hero__confetti" aria-hidden="true"></div>
     <div class="container hero__content">
-      <p class="hero__eyebrow">Wir feiern</p>
-      <h1 class="hero__title"><span class="hero__number">[50]</span> Jahre<br>[Name des Vereins / der Firma]</h1>
-      <p class="hero__meta">
-        <strong>[Samstag, 12. Juni 2027]</strong> · ab [14:00 Uhr] · [Ort]
+      <h1 class="visually-hidden">Jubiläumsfest Bietzen 2027 – 120 Jahre Musik, 100 Jahre Sport</h1>
+      <img class="hero__logo" src="bilder/logo-dunkel.webp" width="1600" height="607"
+           alt="Logo Jubiläumsfest Bietzen 2027 mit den Wappen des M.V. Cäcilia Bietzen 1907 und der SF 1927 Bi-Ha – 120 Jahre Musik, 100 Jahre Sport">
+      <p class="hero__date">23.–26. Juli 2027</p>
+      <p class="hero__days">Freitag bis Montag</p>
+      <p class="hero__place">
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
+        Sportplatz Bietzen
       </p>
-      <div class="countdown" aria-live="polite">
+      <p class="hero__tagline">Vier Tage Musik, Sport &amp; Feiern</p>
+
+      <div class="countdown" aria-label="Countdown bis zum Fest">
         <div><span id="cd-tage">–</span><small>Tage</small></div>
         <div><span id="cd-stunden">–</span><small>Stunden</small></div>
         <div><span id="cd-minuten">–</span><small>Minuten</small></div>
         <div><span id="cd-sekunden">–</span><small>Sekunden</small></div>
       </div>
+
       <div class="hero__actions">
-        <a href="#anmeldung" class="btn">Jetzt anmelden</a>
-        <a href="#programm" class="btn btn--ghost">Zum Programm</a>
+        <a href="#programm" class="btn">Zum Programm</a>
+        <a href="#highlight" class="btn btn--ghost">Highlight: Alpenblech</a>
       </div>
     </div>
   </section>
 
   <main>
 
-    <section id="geschichte" class="section">
-      <div class="container">
-        <h2 class="section__title">Unsere Geschichte</h2>
-        <p class="section__lead">
-          [Ein, zwei Sätze zur Einleitung: Wie alles begann und warum wir dieses Jubiläum gemeinsam feiern wollen.]
-        </p>
-        <ol class="timeline">
-          <li><span class="timeline__year">[1977]</span><div><h3>Die Gründung</h3><p>[Wer hat wann und wo angefangen?]</p></div></li>
-          <li><span class="timeline__year">[1990]</span><div><h3>[Meilenstein]</h3><p>[Kurze Beschreibung]</p></div></li>
-          <li><span class="timeline__year">[2005]</span><div><h3>[Meilenstein]</h3><p>[Kurze Beschreibung]</p></div></li>
-          <li><span class="timeline__year">2027</span><div><h3>[50] Jahre!</h3><p>Und das feiern wir – mit euch.</p></div></li>
-        </ol>
+    <!-- ========== HIGHLIGHT ========== -->
+    <section id="highlight" class="section section--red">
+      <div class="container highlight">
+        <figure class="highlight__photo">
+          <img src="bilder/alpenblech.jpg" width="1400" height="962" loading="lazy"
+               alt="Die sieben Musiker von Alpenblech in Tracht mit ihren Blechblasinstrumenten">
+          <span class="badge">Highlight</span>
+        </figure>
+        <div class="highlight__text">
+          <p class="datebar">Samstag · 24. Juli 2027</p>
+          <h2 class="highlight__name">Alpenblech</h2>
+          <p class="highlight__sub">— Blasmusik vom Feinsten —</p>
+          <p>
+            Seit 2005 bespielt »Alpenblech« die Blasmusikbühnen im In- und Ausland.
+            Die sieben studierten Profi-Musiker um Gründer Klaus Schwärzler verbinden
+            größtmögliche Präzision mit Herzblut und reiner Spielfreude – von alten
+            Mosch-Klassikern über Oberkrainer und Tanzlmusi bis zu eigenen Kompositionen
+            und hochvirtuosen Soli.
+          </p>
+          <p class="highlight__claim">Garantiert bringen sie das Festzelt zum Beben!</p>
+          <div class="highlight__facts">
+            <div><small>Einlass</small><strong>19 Uhr</strong></div>
+            <div><small>Beginn</small><strong>21 Uhr</strong></div>
+          </div>
+          <p class="highlight__tickets">Tickets demnächst verfügbar</p>
+        </div>
       </div>
     </section>
 
-    <section id="programm" class="section section--alt">
+    <!-- ========== PROGRAMM ========== -->
+    <section id="programm" class="section">
       <div class="container">
         <h2 class="section__title">Programm</h2>
-        <p class="section__lead">[Samstag, 12. Juni 2027]</p>
-        <ul class="program">
-          <li><time>[14:00]</time><div><h3>Empfang &amp; Sektempfang</h3><p>[Begrüßung der Gäste]</p></div></li>
-          <li><time>[15:00]</time><div><h3>Festreden</h3><p>[Wer spricht?]</p></div></li>
-          <li><time>[16:00]</time><div><h3>Kaffee, Kuchen &amp; Kinderprogramm</h3><p>[Hüpfburg, Kinderschminken …]</p></div></li>
-          <li><time>[18:30]</time><div><h3>Abendessen</h3><p>[Buffet / Grill]</p></div></li>
-          <li><time>[20:00]</time><div><h3>Live-Musik &amp; Tanz</h3><p>[Band / DJ]</p></div></li>
-          <li><time>[22:30]</time><div><h3>Überraschung</h3><p>Lasst euch überraschen!</p></div></li>
-        </ul>
+        <p class="section__lead">Vier Tage, ein Festplatz: Freitag bis Montag feiern wir gemeinsam auf dem Sportplatz Bietzen.</p>
+
+        <div class="days">
+          <article class="day">
+            <header class="day__head"><span class="day__name">Freitag</span><span class="day__date">23.07.</span></header>
+            <ul class="day__list">
+              <li class="day__tba">Programm wird in Kürze bekanntgegeben</li>
+            </ul>
+          </article>
+
+          <article class="day day--featured">
+            <header class="day__head"><span class="day__name">Samstag</span><span class="day__date">24.07.</span></header>
+            <ul class="day__list">
+              <li><time>19:00</time><span>Einlass</span></li>
+              <li><time>21:00</time><span><strong>Alpenblech</strong><br>Blasmusik vom Feinsten</span></li>
+            </ul>
+          </article>
+
+          <article class="day">
+            <header class="day__head"><span class="day__name">Sonntag</span><span class="day__date">25.07.</span></header>
+            <ul class="day__list">
+              <li class="day__tba">Programm wird in Kürze bekanntgegeben</li>
+            </ul>
+          </article>
+
+          <article class="day">
+            <header class="day__head"><span class="day__name">Montag</span><span class="day__date">26.07.</span></header>
+            <ul class="day__list">
+              <li class="day__tba">Programm wird in Kürze bekanntgegeben</li>
+            </ul>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="ort" class="section">
+    <!-- ========== VEREINE ========== -->
+    <section id="vereine" class="section section--alt">
+      <div class="container">
+        <h2 class="section__title">Zwei Vereine, ein Fest</h2>
+        <p class="section__lead">2027 feiert Bietzen doppelt – und das ganze Dorf feiert mit.</p>
+
+        <div class="clubs">
+          <article class="club">
+            <img src="bilder/wappen-musikverein.webp" width="357" height="360" loading="lazy" alt="Wappen des M.V. Cäcilia Bietzen 1907">
+            <div>
+              <p class="club__years">120 Jahre Musik</p>
+              <h3>Musikverein Cäcilia Bietzen</h3>
+              <p class="club__since">gegründet 1907</p>
+            </div>
+          </article>
+          <article class="club">
+            <img src="bilder/wappen-sportfreunde.webp" width="358" height="360" loading="lazy" alt="Wappen der SF 1927 Bi-Ha">
+            <div>
+              <p class="club__years">100 Jahre Sport</p>
+              <h3>SF Bietzen-Harlingen</h3>
+              <p class="club__since">gegründet 1927</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ANFAHRT ========== -->
+    <section id="anfahrt" class="section">
       <div class="container grid-2">
         <div>
           <h2 class="section__title">Anfahrt</h2>
           <address class="address">
-            <strong>[Name der Location]</strong><br>
-            [Straße Hausnummer]<br>
-            [PLZ Ort]
+            <strong>Sportplatz Bietzen</strong><br>
+            66663 Merzig-Bietzen
           </address>
           <ul class="info-list">
-            <li><strong>Parken:</strong> [Parkplätze direkt an der Location]</li>
-            <li><strong>ÖPNV:</strong> [Bus Linie X, Haltestelle Y – 5 Min. Fußweg]</li>
-            <li><strong>Barrierefreiheit:</strong> [ebenerdiger Zugang]</li>
+            <li><strong>Parken:</strong> Infos folgen</li>
+            <li><strong>Bus &amp; Bahn:</strong> Infos folgen</li>
           </ul>
-          <a class="btn btn--ghost-dark" target="_blank" rel="noopener"
-             href="https://www.openstreetmap.org/search?query=[Adresse]">Auf der Karte öffnen</a>
+          <a class="btn btn--outline" target="_blank" rel="noopener"
+             href="https://www.openstreetmap.org/search?query=Sportplatz%20Bietzen%20Merzig">Auf der Karte öffnen</a>
         </div>
-        <div class="map-placeholder" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="56" height="56"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
-          <p>[Ort]</p>
+        <div class="map-card" aria-hidden="true">
+          <img src="bilder/logo-hell.webp" width="1600" height="607" loading="lazy" alt="">
+          <p><svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg> Sportplatz Bietzen</p>
         </div>
       </div>
     </section>
 
-    <section id="anmeldung" class="section section--alt">
-      <div class="container container--narrow">
-        <h2 class="section__title">Anmeldung</h2>
-        <p class="section__lead">Damit wir gut planen können, meldet euch bitte bis zum <strong>[1. Mai 2027]</strong> an.</p>
+    <!-- ========== TICKETS ========== -->
+    <section id="tickets" class="section section--red">
+      <div class="container container--narrow tickets">
+        <h2 class="section__title section__title--light">Tickets</h2>
+        <p class="tickets__soon">Demnächst verfügbar</p>
+        <p class="section__lead section__lead--light">
+          Trag dich ein und wir sagen dir Bescheid, sobald der Vorverkauf startet – vor allem für den Alpenblech-Abend am Samstag.
+        </p>
 
-        <!-- data-netlify sorgt dafür, dass Netlify die Anmeldungen automatisch sammelt. -->
-        <form class="form" name="anmeldung" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="anmeldung">
+        <!-- data-netlify: Netlify sammelt die Einträge automatisch (Dashboard → Forms). -->
+        <form class="form" name="ticket-info" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="ticket-info">
           <p class="hidden"><label>Nicht ausfüllen: <input name="bot-field"></label></p>
-
           <div class="form__row">
-            <label>Name*<input type="text" name="name" required autocomplete="name"></label>
+            <label>Name<input type="text" name="name" autocomplete="name"></label>
             <label>E-Mail*<input type="email" name="email" required autocomplete="email"></label>
           </div>
-
-          <fieldset class="form__choice">
-            <legend>Kommst du?*</legend>
-            <label><input type="radio" name="teilnahme" value="ja" required checked> Ja, ich bin dabei!</label>
-            <label><input type="radio" name="teilnahme" value="nein"> Leider nicht</label>
-          </fieldset>
-
-          <div class="form__row" data-only-yes>
-            <label>Erwachsene<input type="number" name="erwachsene" min="0" max="20" value="1"></label>
-            <label>Kinder<input type="number" name="kinder" min="0" max="20" value="0"></label>
-          </div>
-
-          <label data-only-yes>Essenswünsche / Allergien
-            <input type="text" name="essen" placeholder="z. B. vegetarisch, glutenfrei">
+          <label class="form__check">
+            <input type="checkbox" name="einwilligung" value="ja" required>
+            <span>Ich bin einverstanden, dass meine E-Mail-Adresse ausschließlich für Infos zum Ticketverkauf des Jubiläumsfestes genutzt wird. Details in der <a href="datenschutz.html">Datenschutzerklärung</a>.*</span>
           </label>
-
-          <label>Nachricht an uns
-            <textarea name="nachricht" rows="4" placeholder="Grüße, Erinnerungen, Fragen …"></textarea>
-          </label>
-
-          <button type="submit" class="btn">Anmeldung absenden</button>
+          <button type="submit" class="btn">Benachrichtigt mich</button>
           <p class="form__status" role="status"></p>
         </form>
+
+        <p class="tickets__contact">Fragen? <a href="mailto:info@jubilaeum2027.de">info@jubilaeum2027.de</a></p>
       </div>
     </section>
 
+    <!-- ========== FAQ ========== -->
     <section id="faq" class="section">
       <div class="container container--narrow">
         <h2 class="section__title">Häufige Fragen</h2>
         <details>
-          <summary>Gibt es einen Dresscode?</summary>
-          <p>[Nein – kommt so, wie ihr euch wohlfühlt. / Festlich-sommerlich.]</p>
+          <summary>Wann und wo findet das Fest statt?</summary>
+          <p>Von Freitag, 23. Juli bis Montag, 26. Juli 2027 auf dem Sportplatz Bietzen.</p>
         </details>
         <details>
-          <summary>Dürfen Kinder mitkommen?</summary>
-          <p>[Unbedingt! Es gibt ein eigenes Kinderprogramm.]</p>
+          <summary>Wann gibt es Tickets für Alpenblech?</summary>
+          <p>Der Vorverkauf startet demnächst. <a href="#tickets">Trag dich ein</a>, dann bekommst du Bescheid.</p>
         </details>
         <details>
-          <summary>Was kostet die Teilnahme?</summary>
-          <p>[Der Eintritt ist frei, Essen und Getränke …]</p>
+          <summary>Wie sieht das Programm an den anderen Tagen aus?</summary>
+          <p>Das Programm für Freitag, Sonntag und Montag geben wir in Kürze bekannt – schau einfach wieder vorbei.</p>
         </details>
         <details>
-          <summary>Kann ich etwas beitragen?</summary>
-          <p>[Kuchenspenden, alte Fotos für die Ausstellung … meldet euch gern bei uns.]</p>
+          <summary>Ich möchte beim Fest mithelfen – wie geht das?</summary>
+          <p>Super! Schreib uns an <a href="mailto:info@jubilaeum2027.de">info@jubilaeum2027.de</a>.</p>
         </details>
         <details>
           <summary>Wen kann ich bei Fragen kontaktieren?</summary>
-          <p>[Name], <a href="mailto:[email@beispiel.de]">[email@beispiel.de]</a>, [Telefon]</p>
+          <p>Schreib uns jederzeit an <a href="mailto:info@jubilaeum2027.de">info@jubilaeum2027.de</a>.</p>
         </details>
       </div>
     </section>
@@ -181,9 +242,14 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p>Wir freuen uns auf euch! 🎉</p>
+      <div class="footer__crests">
+        <img src="bilder/wappen-musikverein.webp" width="357" height="360" loading="lazy" alt="M.V. Cäcilia Bietzen 1907">
+        <img src="bilder/wappen-sportfreunde.webp" width="358" height="360" loading="lazy" alt="SF 1927 Bi-Ha">
+      </div>
+      <p class="footer__tagline">120 Jahre Musik · 100 Jahre Sport</p>
+      <p><a href="mailto:info@jubilaeum2027.de">info@jubilaeum2027.de</a></p>
       <p class="footer__small">
-        © 2027 [Name] · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
+        © 2027 Jubiläumsfest Bietzen · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
       </p>
     </div>
   </footer>

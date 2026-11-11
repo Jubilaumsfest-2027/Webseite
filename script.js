@@ -1,8 +1,8 @@
 // ============================================================
-// ANPASSEN: Datum und Uhrzeit des Festes (Ortszeit)
-// Format: "JJJJ-MM-TTTHH:MM:SS"
+// Beginn des Festes (Ortszeit). Format: "JJJJ-MM-TTTHH:MM:SS"
+// Sobald die Uhrzeit am Freitag feststeht, hier eintragen.
 // ============================================================
-const FEST_DATUM = new Date("2027-06-12T14:00:00");
+const FEST_DATUM = new Date("2027-07-23T00:00:00");
 
 // ---------- Countdown ----------
 (function countdown() {
@@ -19,8 +19,10 @@ const FEST_DATUM = new Date("2027-06-12T14:00:00");
   function tick() {
     const diff = FEST_DATUM - new Date();
     if (diff <= 0) {
+      const ende = new Date("2027-07-27T00:00:00");
+      const text = new Date() < ende ? "🎉 Wir feiern – kommt vorbei! 🎉" : "Danke, dass ihr mitgefeiert habt!";
       document.querySelector(".countdown").innerHTML =
-        '<p style="font-size:1.4rem;margin:0">🎉 Heute wird gefeiert! 🎉</p>';
+        `<p style="font-size:1.5rem;margin:0">${text}</p>`;
       clearInterval(timer);
       return;
     }
@@ -63,7 +65,7 @@ const FEST_DATUM = new Date("2027-06-12T14:00:00");
 (function confetti() {
   const box = document.querySelector(".hero__confetti");
   if (!box || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  const colors = ["#d4a24c", "#f0c977", "#ffffff", "#e8b4b8", "#9ec5e8"];
+  const colors = ["#f7c948", "#f7c948", "#ffffff", "#e31e24", "#ffd862"];
   for (let i = 0; i < 40; i++) {
     const c = document.createElement("span");
     c.className = "confetti";
@@ -78,7 +80,7 @@ const FEST_DATUM = new Date("2027-06-12T14:00:00");
 
 // ---------- Sanftes Einblenden der Abschnitte ----------
 (function reveal() {
-  const items = document.querySelectorAll(".section__title, .section__lead, .timeline li, .program li, details, .form, .grid-2 > *");
+  const items = document.querySelectorAll(".section__title, .section__lead, .day, .club, .highlight > *, details, .form, .grid-2 > *");
   if (!("IntersectionObserver" in window)) return;
   items.forEach((el) => el.classList.add("reveal"));
   const io = new IntersectionObserver(
@@ -94,27 +96,18 @@ const FEST_DATUM = new Date("2027-06-12T14:00:00");
   items.forEach((el) => io.observe(el));
 })();
 
-// ---------- Anmeldeformular ----------
+// ---------- Formular "Ticket-Info" ----------
 (function form() {
-  const form = document.querySelector("form[name='anmeldung']");
+  const form = document.querySelector("form[name='ticket-info']");
   if (!form) return;
   const status = form.querySelector(".form__status");
-  const onlyYes = form.querySelectorAll("[data-only-yes]");
-
-  form.addEventListener("change", (e) => {
-    if (e.target.name === "teilnahme") {
-      const yes = e.target.value === "ja";
-      onlyYes.forEach((el) => (el.hidden = !yes));
-    }
-  });
+  const btn = form.querySelector("button[type='submit']");
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     status.className = "form__status";
     status.textContent = "Wird gesendet …";
-    const btn = form.querySelector("button[type='submit']");
     btn.disabled = true;
-
     try {
       const res = await fetch("/", {
         method: "POST",
@@ -122,17 +115,12 @@ const FEST_DATUM = new Date("2027-06-12T14:00:00");
         body: new URLSearchParams(new FormData(form)).toString(),
       });
       if (!res.ok) throw new Error(res.status);
-      const yes = form.teilnahme.value === "ja";
       status.classList.add("is-ok");
-      status.textContent = yes
-        ? "Danke für deine Anmeldung! Wir freuen uns auf dich. 🎉"
-        : "Schade, dass du nicht kommen kannst – danke für die Rückmeldung!";
+      status.textContent = "Danke! Wir melden uns, sobald es Tickets gibt. 🎺⚽";
       form.reset();
-      onlyYes.forEach((el) => (el.hidden = false));
     } catch (err) {
       status.classList.add("is-error");
-      status.textContent =
-        "Das hat leider nicht geklappt. Bitte versuche es später noch einmal oder schreib uns eine E-Mail.";
+      status.textContent = "Das hat leider nicht geklappt. Bitte versuch es später noch einmal oder schreib an info@jubilaeum2027.de.";
     } finally {
       btn.disabled = false;
     }
