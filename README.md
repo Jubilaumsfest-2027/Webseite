@@ -29,4 +29,13 @@ Online: **https://jubilaeum2027.de** – Netlify-Projekt `jubilaeum2027`, verbun
 Automatisches Veröffentlichen ist **gesperrt**: Ein Push auf `main` erzeugt nur einen neuen Deploy,
 live geht er erst nach Klick auf **Publish deploy** im Netlify-Dashboard (Deploys).
 
+Testseite: **https://test.jubilaeum2027.de** – zeigt automatisch den Branch `test`
+(nur mit Netlify-Team-Login sichtbar).
+
+Ablauf für Änderungen:
+1. Änderungen auf den Branch `test` pushen.
+2. Auf https://test.jubilaeum2027.de prüfen.
+3. Passt alles: `test` in `main` übernehmen (Pull Request `test` → `main`).
+4. Im Netlify-Dashboard unter Deploys den neuen Deploy mit **Publish deploy** live schalten.
+
 Einträge des Formulars „Ticket-Info“ stehen im Netlify-Dashboard unter **Forms**.
