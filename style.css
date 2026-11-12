@@ -229,6 +229,12 @@ h3 { font-size: 1.1rem; font-weight: 600; }
 .tickets .section__title::after { left: 50%; transform: translateX(-50%); }
 .tickets .section__lead { margin-inline: auto; }
 .tickets__soon { font: 400 clamp(1.8rem, 5vw, 2.6rem)/1 var(--font-head); letter-spacing: .14em; color: var(--rot); margin: -.4rem 0 1rem; }
+.admission { list-style: none; padding: 0; margin: 1.5rem auto 2.5rem; max-width: 30rem; text-align: left; }
+.admission li { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; padding: .75rem 1rem; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: .5rem; }
+.admission__day { font-weight: 600; }
+.admission__price { font: 400 1.25rem/1 var(--font-head); letter-spacing: .1em; color: var(--muted); }
+.admission li.admission--ticket { border-color: var(--rot); background: var(--rot-zart); }
+.admission--ticket .admission__price { color: var(--rot); }
 .tickets__contact { margin: 2rem 0 0; }
 .tickets__contact a { font-weight: 600; }
 
