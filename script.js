@@ -2,7 +2,7 @@
 // Beginn des Festes (Ortszeit). Format: "JJJJ-MM-TTTHH:MM:SS"
 // Sobald die Uhrzeit am Freitag feststeht, hier eintragen.
 // ============================================================
-const FEST_DATUM = new Date("2027-07-23T00:00:00");
+const FEST_DATUM = new Date("2027-07-23T19:00:00+02:00");
 
 // ---------- Countdown ----------
 (function countdown() {
