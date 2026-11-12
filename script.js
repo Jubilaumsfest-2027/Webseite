@@ -1,8 +1,9 @@
 // ============================================================
-// Beginn des Festes (Ortszeit). Format: "JJJJ-MM-TTTHH:MM:SS"
-// Sobald die Uhrzeit am Freitag feststeht, hier eintragen.
+// Ende des Countdowns in deutscher Sommerzeit (+02:00), damit er
+// überall auf der Welt zur selben Zeit abläuft.
+// Format: "JJJJ-MM-TTTHH:MM:SS+02:00"
 // ============================================================
-const FEST_DATUM = new Date("2027-07-23T00:00:00");
+const FEST_DATUM = new Date("2027-07-23T19:00:00+02:00");
 
 // ---------- Countdown ----------
 (function countdown() {
@@ -65,7 +66,7 @@ const FEST_DATUM = new Date("2027-07-23T00:00:00");
 (function confetti() {
   const box = document.querySelector(".hero__confetti");
   if (!box || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  const colors = ["#f7c948", "#f7c948", "#ffffff", "#e31e24", "#ffd862"];
+  const colors = ["#ed1c24", "#ed1c24", "#1d1d1f", "#c7c7c7", "#7a0a0a"];
   for (let i = 0; i < 40; i++) {
     const c = document.createElement("span");
     c.className = "confetti";

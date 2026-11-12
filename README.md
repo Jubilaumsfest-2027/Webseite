@@ -13,6 +13,7 @@ Schriften (Bebas Neue, Poppins, Permanent Marker, SIL Open Font License) liegen 
 | `style.css` | Gestaltung – Farben aus dem Logo stehen oben unter `:root` |
 | `script.js` | Countdown (`FEST_DATUM`), Menü, Animationen, Formular |
 | `bilder/` | Logo (hell/dunkel), Wappen, Bandfoto, Vorschaubild zum Teilen |
+| `404.html` | Eigene Fehlerseite für nicht vorhandene Adressen (Netlify nutzt sie automatisch) |
 | `impressum.html`, `datenschutz.html` | Rechtliches – Platzhalter in `[eckigen Klammern]` noch ausfüllen |
 
 ## Programm ergänzen
@@ -27,5 +28,14 @@ Lokal: `index.html` im Browser öffnen.
 Online: **https://jubilaeum2027.de** – Netlify-Projekt `jubilaeum2027`, verbunden mit dem Branch `main`.
 Automatisches Veröffentlichen ist **gesperrt**: Ein Push auf `main` erzeugt nur einen neuen Deploy,
 live geht er erst nach Klick auf **Publish deploy** im Netlify-Dashboard (Deploys).
+
+Testseite: **https://test.jubilaeum2027.de** – zeigt automatisch den Branch `test`
+(nur mit Netlify-Team-Login sichtbar).
+
+Ablauf für Änderungen:
+1. Änderungen auf den Branch `test` pushen.
+2. Auf https://test.jubilaeum2027.de prüfen.
+3. Passt alles: `test` in `main` übernehmen (Pull Request `test` → `main`).
+4. Im Netlify-Dashboard unter Deploys den neuen Deploy mit **Publish deploy** live schalten.
 
 Einträge des Formulars „Ticket-Info“ stehen im Netlify-Dashboard unter **Forms**.
