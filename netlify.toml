@@ -1,6 +1,10 @@
-# Netlify: statische Seite ohne Build-Schritt, veröffentlicht wird der Projektordner.
+# Netlify: statische Seite, veröffentlicht wird der Projektordner.
 [build]
   publish = "."
+  # Bei jedem Deploy bekommen style.css und script.js das aktuelle Datum als
+  # Version angehängt (z. B. style.css?v=20261113-1430), damit Browser immer
+  # die neue Fassung laden. Im Repository steht dort nur "?v=lokal".
+  command = 'V=$(TZ=Europe/Berlin date +%Y%m%d-%H%M); sed -i -E "s/(style\.css|script\.js)\?v=[A-Za-z0-9-]+/\1?v=$V/g" *.html && grep -o "style.css?v=[0-9-]*" index.html'
 
 [[headers]]
   for = "/schriften/*"

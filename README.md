@@ -38,4 +38,8 @@ Ablauf für Änderungen:
 3. Passt alles: `test` in `main` übernehmen (Pull Request `test` → `main`).
 4. Im Netlify-Dashboard unter Deploys den neuen Deploy mit **Publish deploy** live schalten.
 
+Bei jedem Deploy hängt Netlify an `style.css` und `script.js` das aktuelle Datum als Version an
+(`?v=JJJJMMTT-HHMM`, siehe `netlify.toml`), damit Besucher immer die neue Fassung laden.
+Neue HTML-Seiten binden die Dateien daher mit `style.css?v=lokal` bzw. `script.js?v=lokal` ein.
+
 Einträge des Formulars „Ticket-Info“ stehen im Netlify-Dashboard unter **Forms**.

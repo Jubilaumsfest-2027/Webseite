@@ -62,23 +62,6 @@ const FEST_DATUM = new Date("2027-07-23T19:00:00+02:00");
   }
 })();
 
-// ---------- Konfetti im Kopfbereich ----------
-(function confetti() {
-  const box = document.querySelector(".hero__confetti");
-  if (!box || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  const colors = ["#ed1c24", "#ed1c24", "#1d1d1f", "#c7c7c7", "#7a0a0a"];
-  for (let i = 0; i < 40; i++) {
-    const c = document.createElement("span");
-    c.className = "confetti";
-    c.style.left = Math.random() * 100 + "%";
-    c.style.background = colors[i % colors.length];
-    c.style.animationDuration = 6 + Math.random() * 8 + "s";
-    c.style.animationDelay = -Math.random() * 14 + "s";
-    c.style.transform = `rotate(${Math.random() * 360}deg)`;
-    box.appendChild(c);
-  }
-})();
-
 // ---------- Sanftes Einblenden der Abschnitte ----------
 (function reveal() {
   const items = document.querySelectorAll(".section__title, .section__lead, .day, .club, .highlight > *, details, .form, .grid-2 > *");
@@ -137,8 +120,9 @@ const FEST_DATUM = new Date("2027-07-23T19:00:00+02:00");
 
   const NS = "http://www.w3.org/2000/svg";
   const C = { rot: "#ed1c24", ink: "#1d1d1f", haut: "#eab48c", wein: "#7a0a0a", gold: "#d9a514", linie: "#d9d9d9" };
-  const BODEN_FELD = 100; // Boden der Fußballer (hinten)
-  const BODEN_ZUG = 126;  // Boden der Blaskapelle (vorne)
+  const S = 1.4;          // Größe der Figuren
+  const BODEN_FELD = 108; // Boden der Fußballer (hinten)
+  const BODEN_ZUG = 146;  // Boden der Blaskapelle (vorne)
 
   const el = (tag, attrs = {}, parent) => {
     const n = document.createElementNS(NS, tag);
@@ -151,25 +135,25 @@ const FEST_DATUM = new Date("2027-07-23T19:00:00+02:00");
   const rot = (n, deg, cx, cy) => n.setAttribute("transform", `rotate(${deg} ${cx} ${cy})`);
   const move = (n, x, y, extra = "") => n.setAttribute("transform", `translate(${x} ${y})${extra}`);
 
-  const svg = el("svg", { viewBox: "0 0 800 132", "aria-hidden": "true", focusable: "false" });
+  const svg = el("svg", { viewBox: "0 0 800 150", "aria-hidden": "true", focusable: "false" });
   box.appendChild(svg);
 
   // Spielfeld, Tor, Straße
   line(svg, 110, BODEN_FELD + 1, 800, BODEN_FELD + 1, C.linie, 2);
   const tor = el("g", {}, svg);
-  for (let i = 0; i < 5; i++) line(tor, 752 + i * 9, 66, 752 + i * 9, BODEN_FELD, C.linie, 1);
-  for (let i = 0; i < 4; i++) line(tor, 748, 70 + i * 8, 792, 70 + i * 8, C.linie, 1);
-  line(tor, 748, 66, 748, BODEN_FELD, C.ink, 3);
-  line(tor, 748, 66, 792, 66, C.ink, 3);
+  for (let i = 0; i < 5; i++) line(tor, 752 + i * 9, 60, 752 + i * 9, BODEN_FELD, C.linie, 1);
+  for (let i = 0; i < 5; i++) line(tor, 748, 66 + i * 9, 792, 66 + i * 9, C.linie, 1);
+  line(tor, 748, 60, 748, BODEN_FELD, C.ink, 3);
+  line(tor, 748, 60, 792, 60, C.ink, 3);
   line(svg, 0, BODEN_ZUG + 1, 800, BODEN_ZUG + 1, C.linie, 2);
-  const torText = el("text", { x: 700, y: 52, "text-anchor": "middle", fill: C.rot, "font-size": 22, "font-family": "Bebas Neue, Impact, sans-serif", "letter-spacing": 2, opacity: 0 }, svg);
+  const torText = el("text", { x: 690, y: 40, "text-anchor": "middle", fill: C.rot, "font-size": 30, "font-family": "Bebas Neue, Impact, sans-serif", "letter-spacing": 2, opacity: 0 }, svg);
   torText.textContent = "TOR!";
 
   // Fußballer (Ursprung = Füße, blickt nach rechts; dir = -1 spiegelt)
   function spieler(x, trikot, dir) {
     const pos = el("g", {}, svg);
     move(pos, x, BODEN_FELD);
-    const body = el("g", { transform: dir < 0 ? "scale(-1 1)" : "" }, pos);
+    const body = el("g", { transform: `scale(${dir * S} ${S})` }, pos);
     const inner = el("g", {}, body);
     const standbein = line(inner, -2, -15, -4, 0);
     const schussbein = line(inner, 2, -15, 4, 0);
@@ -188,18 +172,18 @@ const FEST_DATUM = new Date("2027-07-23T19:00:00+02:00");
   const torwart = spieler(740, C.ink, -1);
 
   const ballG = el("g", {}, svg);
-  const ball = el("g", {}, ballG);
+  const ball = el("g", {}, el("g", { transform: `scale(${S})` }, ballG));
   el("circle", { cx: 0, cy: 0, r: 4, fill: "#fff", stroke: C.ink, "stroke-width": 1.5 }, ball);
   el("path", { d: "M-1.5 -1.5h3v3h-3z", fill: C.ink }, ball);
 
   // Ballweg: [start, ende, x0, x1, höhe, y0, y1] – Zeiten als Anteil vom Takt
   const TAKT_FELD = 9; // Sekunden
   const wege = [
-    [0.04, 0.18, 178, 328, 16, 0, 0],
-    [0.22, 0.36, 328, 478, 16, 0, 0],
-    [0.40, 0.52, 478, 772, 34, 0, -14],
-    [0.52, 0.56, 772, 778, 0, -14, 0],
-    [0.72, 0.96, 778, 178, 55, 0, 0],
+    [0.04, 0.18, 181, 331, 20, 0, 0],
+    [0.22, 0.36, 331, 481, 20, 0, 0],
+    [0.40, 0.52, 481, 772, 40, 0, -20],
+    [0.52, 0.56, 772, 778, 0, -20, 0],
+    [0.72, 0.96, 778, 181, 60, 0, 0],
   ];
   const tritte = [[p1, 0.04], [p2, 0.22], [p3, 0.40]];
 
@@ -208,7 +192,7 @@ const FEST_DATUM = new Date("2027-07-23T19:00:00+02:00");
     const s = u * TAKT_FELD;
 
     // Ball
-    let bx = 178, by = 0;
+    let bx = 181, by = 0;
     for (let i = 0; i < wege.length; i++) {
       const [a, b, x0, x1, h, y0, y1] = wege[i];
       if (u >= a && u < b) {
@@ -219,8 +203,8 @@ const FEST_DATUM = new Date("2027-07-23T19:00:00+02:00");
       }
       if (u >= b) { bx = x1; by = y1; }
     }
-    if (u < wege[0][0]) { bx = 178; by = 0; }
-    move(ballG, bx, BODEN_FELD - 4 + by);
+    if (u < wege[0][0]) { bx = 181; by = 0; }
+    move(ballG, bx, BODEN_FELD - 4 * S + by);
     rot(ball, bx * 4, 0, 0);
 
     // Spieler wippen leicht, Schuss mit Ausholen
@@ -241,14 +225,14 @@ const FEST_DATUM = new Date("2027-07-23T19:00:00+02:00");
 
     // Verteidiger springt (zu spät) nach dem hohen Ball
     const vj = (u - 0.43) / 0.07;
-    move(verteidiger.pos, verteidiger.x, BODEN_FELD - (vj > 0 && vj < 1 ? Math.sin(vj * Math.PI) * 14 : 0));
+    move(verteidiger.pos, verteidiger.x, BODEN_FELD - (vj > 0 && vj < 1 ? Math.sin(vj * Math.PI) * 18 : 0));
 
     // Torwart hechtet daneben, steht wieder auf und wirft den Ball zurück
     const td = (u - 0.47) / 0.08;
     let tr = 0, ty = 0;
-    if (td > 0 && td < 1) { tr = -60 * td; ty = -Math.sin(td * Math.PI) * 10; }
+    if (td > 0 && td < 1) { tr = -60 * td; ty = -Math.sin(td * Math.PI) * 14; }
     else if (u >= 0.55 && u < 0.66) tr = -60 * (1 - (u - 0.55) / 0.11);
-    move(torwart.pos, torwart.x + (td > 0 && u < 0.66 ? 6 : 0), BODEN_FELD + ty, tr ? ` rotate(${tr} 0 -15)` : "");
+    move(torwart.pos, torwart.x + (td > 0 && u < 0.66 ? 8 : 0), BODEN_FELD + ty, tr ? ` rotate(${tr} 0 ${-15 * S})` : "");
     if (u > 0.68 && u < 0.74) { rot(torwart.armL, 150, -5, -28); rot(torwart.armR, 160, 5, -28); }
 
     // „TOR!“
@@ -260,7 +244,7 @@ const FEST_DATUM = new Date("2027-07-23T19:00:00+02:00");
   function musiker(x, instrument) {
     const pos = el("g", {}, zug);
     move(pos, x, BODEN_ZUG);
-    const inner = el("g", {}, pos);
+    const inner = el("g", {}, el("g", { transform: `scale(${S})` }, pos));
     const beinA = line(inner, 0, -16, 0, 0);
     const beinB = line(inner, 0, -16, 0, 0);
     // Instrumente hinter dem Körper
@@ -309,14 +293,14 @@ const FEST_DATUM = new Date("2027-07-23T19:00:00+02:00");
     return { pos, inner, beinA, beinB, x, ...extra };
   }
 
-  const ABSTAND = 40;
+  const ABSTAND = 56;
   const kapelle = ["stab", "trompete", "posaune", "klarinette", "tuba", "trommel"].map(
     (inst, i) => musiker(-i * ABSTAND, inst)
   );
 
   // Noten über der Kapelle
   const noten = [0, 1, 2, 3].map((i) => {
-    const n = el("text", { "font-size": 14, fill: C.rot, "font-family": "serif" }, zug);
+    const n = el("text", { "font-size": 19, fill: C.rot, "font-family": "serif" }, zug);
     n.textContent = i % 2 ? "♫" : "♪";
     return n;
   });
@@ -342,7 +326,7 @@ const FEST_DATUM = new Date("2027-07-23T19:00:00+02:00");
       const k = (t * 0.5 + i / noten.length) % 1;
       const nx = -i * ABSTAND * 1.3 + 4 + Math.sin(k * 6 + i) * 4;
       n.setAttribute("x", nx);
-      n.setAttribute("y", BODEN_ZUG - 58 - k * 26);
+      n.setAttribute("y", BODEN_ZUG - 58 * S - k * 30);
       n.setAttribute("opacity", Math.sin(k * Math.PI).toFixed(2));
     });
   }
