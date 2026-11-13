@@ -110,6 +110,8 @@ h3 { font-size: 1.1rem; font-weight: 600; }
 }
 .hero__content { position: relative; z-index: 1; }
 .hero__logo { width: min(860px, 100%); margin: 0 auto 1.6rem; }
+.hero__fun { width: min(860px, 100%); margin: -.8rem auto 1.2rem; aspect-ratio: 800 / 132; }
+.hero__fun svg { display: block; width: 100%; height: 100%; overflow: visible; }
 .hero__date { font: 400 clamp(3rem, 10vw, 6rem)/1 var(--font-head); letter-spacing: .02em; margin: 0; }
 .hero__days { font: 400 clamp(1.4rem, 3.6vw, 2.1rem)/1.2 var(--font-head); letter-spacing: .14em; color: var(--rot); margin: .3rem 0 1rem; }
 .hero__place {
