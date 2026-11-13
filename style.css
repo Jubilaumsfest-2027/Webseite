@@ -275,4 +275,6 @@ details p { margin: .7rem 0 0; color: var(--muted); }
 /* ---------- Rechtliche Seiten ---------- */
 .legal main { padding: 120px 0 4rem; }
 .legal h2 { font-size: 1.8rem; color: var(--ink); margin-top: 2rem; }
+.legal ul { padding-left: 1.3rem; }
+.legal li { margin-bottom: .25rem; }
 .legal h1 { font-family: var(--font-head); font-weight: 400; letter-spacing: .02em; }
