@@ -12,7 +12,8 @@ Schriften (Bebas Neue, Poppins, Permanent Marker, SIL Open Font License) liegen 
 | `index.html` | Startseite: Highlight, Programm, Vereine, Anfahrt, Tickets, FAQ |
 | `style.css` | Gestaltung – Farben aus dem Logo stehen oben unter `:root` |
 | `script.js` | Countdown (`FEST_DATUM`), Menü, Animationen, Formular |
-| `bilder/` | Logo (hell/dunkel), Wappen, Bandfoto, Vorschaubild zum Teilen |
+| `bilder/` | Logo (hell/dunkel), Wappen, Bandfoto, Vorschaubild zum Teilen (`vorschau-2027.jpg`, 1200×630), App-Icons (192/512, maskable) |
+| `favicon.ico`, `apple-touch-icon.png`, `site.webmanifest` | Browser-Symbol, Icon für iPhone/iPad-Homescreen, App-Angaben für Android |
 | `404.html` | Eigene Fehlerseite für nicht vorhandene Adressen (Netlify nutzt sie automatisch) |
 | `impressum.html`, `datenschutz.html` | Rechtliches – Platzhalter in `[eckigen Klammern]` noch ausfüllen |
 
