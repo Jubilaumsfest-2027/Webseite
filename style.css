@@ -210,6 +210,8 @@ h3 { font-size: 1.1rem; font-weight: 600; }
 .info-list { padding-left: 1.1rem; margin: 0 0 2rem; color: var(--muted); }
 .info-list li { margin-bottom: .4rem; }
 .info-list strong { color: var(--ink); }
+.route__title { font-weight: 600; margin: 0 0 .7rem; }
+.route { display: flex; flex-wrap: wrap; gap: .6rem; }
 .map { margin: 0; }
 .map > a { display: block; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); }
 .map img { display: block; width: 100%; height: auto; transition: transform .3s ease; }
