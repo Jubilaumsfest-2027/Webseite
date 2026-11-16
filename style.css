@@ -210,17 +210,12 @@ h3 { font-size: 1.1rem; font-weight: 600; }
 .info-list { padding-left: 1.1rem; margin: 0 0 2rem; color: var(--muted); }
 .info-list li { margin-bottom: .4rem; }
 .info-list strong { color: var(--ink); }
-.map-card {
-  aspect-ratio: 4 / 3; border-radius: var(--radius);
-  display: grid; place-content: center; justify-items: center; gap: 1rem; padding: 2rem;
-  background:
-    repeating-linear-gradient(0deg, transparent 0 38px, rgba(0,0,0,.05) 38px 40px),
-    repeating-linear-gradient(90deg, transparent 0 38px, rgba(0,0,0,.05) 38px 40px),
-    var(--bg-alt);
-  border: 1px solid var(--line);
-}
-.map-card p { display: flex; align-items: center; gap: .3rem; margin: 0; font: 400 1.5rem/1 var(--font-head); letter-spacing: .08em; color: var(--ink); }
-.map-card svg { color: var(--rot); }
+.map { margin: 0; }
+.map > a { display: block; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); }
+.map img { display: block; width: 100%; height: auto; transition: transform .3s ease; }
+.map > a:hover img { transform: scale(1.02); }
+.map figcaption { font-size: .78rem; color: var(--muted); margin-top: .5rem; text-align: right; }
+.map figcaption a { color: inherit; }
 
 /* ---------- Tickets / Formular ---------- */
 .tickets { text-align: center; }
