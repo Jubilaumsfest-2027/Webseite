@@ -60,6 +60,18 @@ const FEST_DATUM = new Date("2027-07-23T19:00:00+02:00");
       })
     );
   }
+
+  // Klick aufs Logo: nach oben scrollen und den #Abschnitt aus der Adresse entfernen
+  const logo = nav.querySelector(".nav__logo");
+  if (logo) {
+    logo.addEventListener("click", (e) => {
+      e.preventDefault();
+      nav.classList.remove("is-open");
+      if (toggle) toggle.setAttribute("aria-expanded", "false");
+      if (location.hash) history.pushState(null, "", location.pathname + location.search);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 })();
 
 // ---------- Sanftes Einblenden der Abschnitte ----------
